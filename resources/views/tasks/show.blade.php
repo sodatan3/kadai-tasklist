@@ -4,7 +4,7 @@
 
     <h1>タスクの詳細ページ</h1>
     
-    <p>{{Form::checkbox('check')}}{{ $task->content }}</p>
+    <p>{{Form::checkbox('check')}}{{ $task->status }}:{{ $task->content }}</p>
     
     {!! link_to_route('tasks.edit','編集する',[
         'id' => $task->id]) !!}
