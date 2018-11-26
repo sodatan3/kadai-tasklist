@@ -2,17 +2,29 @@
 
 @section('content')
 
-<h1>タスク管理アプリ</h1>
-<h2>タスク一覧</h2>
+<h1>タスク一覧</h1>
 
- @if(count($tasks) >0 )
-  <ul>
-      @foreach($tasks as $task)
-      <li><span>{{ $task->status }}:</span>{!! link_to_route('tasks.show',$task->content,['id' => $task->id]) !!}</li>
-      @endforeach
-  </ul>
-  @endif
+
+   @if(count($tasks) >0 )
+   <table class="table table-striped">
+       <thead>
+           <tr>
+               <th>タスク</th>
+               <th>状況</th>
+           </tr>
+       </thead>
+       <tbody>
+            @foreach($tasks as $task)
+            <tr>
+                <td>{!! link_to_route('tasks.show',$task->content,['id' => $task->id]) !!}</td>
+                <td>{{ $task->status }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    @endif
+
   
-  {!! link_to_route('tasks.create', 'タスクの登録') !!}
+  {!! link_to_route('tasks.create', 'タスクの登録',null,['class' => 'btn btn-info']) !!}
 
 @endsection

@@ -2,44 +2,32 @@
 <html>
     <head>
         <style type="text/css">
-         ul{
-             width: 1000px;
-             list-style: none;
-             margin: 0;
-             padding: 0;
-             border-top: 1px solid black;
-             border-right: 1px solid black;
-             border-left: 1px solid black;
-   
-         }
-         
-         li{
-             border-bottom: 1px solid black;
+        body{
+            padding-top: 70px;
+        }
+        
+        .container{
+            padding: 0 50px 0 50px;
+        }
 
-         }
-         
-         a{
-             text-decoration: none;
-             color: black;
- 
-         }
-         
-         a:hover{
-             color: gray;
-         }
-         
-         span{
-             border-right: 1px solid black;
-             display: inline-block;
- 
-         }
         </style>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tasklist</title>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        @include('commons.error_messages')
+        @include('commons.navbar')
         
-        @yield('content')
+        <div class="container">
+            @include('commons.error_messages')
+            
+            @yield('content')
+        </div>
     </body>
 </html>
