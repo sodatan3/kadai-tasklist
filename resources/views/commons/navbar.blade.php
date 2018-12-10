@@ -14,7 +14,8 @@
         
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>{!! link_to_route('tasks.create', '新規タスクの登録',null,['class' => 'glyphicon glyphicon-pencil']) !!}</li>
+                    <li>{!! link_to_route('signup.get', 'Sign up',null,['class' => 'glyphicon glyphicon-pencil']) !!}</li>
+                    <li><a href="#">Login</a></li>
                 </ul>
             </div>
         </div> <!-- /container -->
